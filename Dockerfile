@@ -11,7 +11,7 @@ RUN apk add cargo cargo-auditable # Common dependencies for Rust packages
 # Create local package repository
 RUN mkdir /repo
 RUN mkdir /repo/main /repo/community /repo/testing
-RUN chown root:abuild /repo
+RUN chown -R root:abuild /repo
 RUN chmod 775 /repo
 
 # Create helper script for building packages
