@@ -4,9 +4,9 @@ FROM alpine:edge
 RUN printf "http://dl-cdn.alpinelinux.org/alpine/edge/main\nhttp://dl-cdn.alpinelinux.org/alpine/edge/community\nhttp://dl-cdn.alpinelinux.org/alpine/edge/testing\n" > /etc/apk/repositories
 RUN apk update
 RUN apk add alpine-sdk git doas
-RUN apk add python3-dev py3-gpep517 py3-setuptools py3-wheel py3-pytest py3-installer # Common dependencies for Python packages
 RUN apk add gcc g++ cmake samurai meson # Common dependencies for C/C++ packages
 RUN apk add cargo cargo-auditable # Common dependencies for Rust packages
+RUN apk add python3-dev py3-gpep517 py3-setuptools py3-wheel py3-pytest py3-installer # Common dependencies for Python packages
 
 # Create local package repository
 RUN mkdir /repo
