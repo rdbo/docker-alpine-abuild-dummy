@@ -7,6 +7,7 @@ RUN apk add alpine-sdk git doas
 RUN apk add gcc g++ cmake samurai meson # Common dependencies for C/C++ packages
 RUN apk add cargo cargo-auditable # Common dependencies for Rust packages
 RUN apk add python3-dev py3-gpep517 py3-setuptools py3-wheel py3-pytest py3-installer # Common dependencies for Python packages
+RUN apk add expat-dev freetype fontconfig-dev libxau-dev xorgproto libmd libbsd libxdmcp-dev libxcb-dev ncurses wlroots-dev # X11/Wayland/font/etc
 
 # Create local package repository
 RUN mkdir /repo
@@ -15,7 +16,7 @@ RUN chown -R root:abuild /repo
 RUN chmod 775 /repo
 
 # Create helper script for building packages
-RUN printf "#!/bin/sh\nabuild -rf -P /repo" > /usr/local/bin/buildapk
+RUN printf "#!/bin/sh\nabuild -rf -kK -P /repo" > /usr/local/bin/buildapk
 RUN chmod 755 /usr/local/bin/buildapk
 
 # Setup build user
