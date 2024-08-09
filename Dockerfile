@@ -13,7 +13,7 @@ RUN apk add expat-dev freetype fontconfig-dev libxau-dev xorgproto libmd libbsd 
 RUN mkdir /repo
 RUN mkdir /repo/main /repo/community /repo/testing
 RUN chown -R root:abuild /repo
-RUN chmod 775 /repo
+RUN chmod -R 775 /repo
 
 # Create helper script for building packages
 RUN printf "#!/bin/sh\nabuild -rf -kK -P /repo" > /usr/local/bin/buildapk
