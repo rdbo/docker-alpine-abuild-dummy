@@ -11,6 +11,7 @@ RUN apk add expat-dev freetype fontconfig-dev libxau-dev xorgproto libmd libbsd 
 RUN apk add py3-qt5 py3-aiohttp py3-aiohttp-socks py3-aiorpcx py3-attrs py3-bitstring py3-certifi py3-dnspython py3-ecdsa py3-jsonpatch py3-protobuf py3-pycryptodomex py3-qrcode py3-qt5
 RUN apk add gmp-dev openssl-dev zlib-dev
 RUN apk add wget curl
+RUN apk add go
 
 # Create local package repository
 RUN mkdir /repo
